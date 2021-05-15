@@ -1,10 +1,11 @@
-import * as React from 'react';
+import React from 'react';
 import { View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import presets from './scene.presets';
-import { SceneProps } from './scene.props';
 
-export const Scene: React.FunctionComponent<SceneProps> = ({ style, preset, ...rest }) => {
+import presets from './scene.presets';
+import { ISceneProps } from './scene.props';
+
+export const Scene: React.FC<ISceneProps> = ({ style, preset, ...rest }) => {
   const styles = presets[preset || 'default'];
 
   return (

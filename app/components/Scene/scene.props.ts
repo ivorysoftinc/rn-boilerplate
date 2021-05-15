@@ -1,6 +1,6 @@
 import { NativeSafeAreaViewProps } from 'react-native-safe-area-context';
 import { ScenePreset } from './scene.presets';
 
-export interface SceneProps extends NativeSafeAreaViewProps {
+export interface ISceneProps extends NativeSafeAreaViewProps {
   preset?: ScenePreset;
 }

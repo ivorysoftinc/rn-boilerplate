@@ -6,15 +6,15 @@ const BASE: TextStyle = {
   fontSize: 15,
 };
 
-interface TextStyles {
+interface ITextStyles {
   default: TextStyle;
   title: TextStyle;
   secondary: TextStyle;
 }
 
-export type TextPreset = keyof TextStyles;
+export type TextPreset = keyof ITextStyles;
 
-export default StyleSheet.create<TextStyles>({
+export default StyleSheet.create<ITextStyles>({
   default: BASE,
 
   title: {
