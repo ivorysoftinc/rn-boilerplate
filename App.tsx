@@ -1,15 +1,19 @@
 import 'react-native-gesture-handler';
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import { enableScreens } from 'react-native-screens';
 import { Provider } from 'react-redux';
+
 import RootNavigator from './app/navigation/root-navigator';
-import { store } from './app/redux';
+import { persistor, store } from './app/redux';
+import { PersistGate } from 'redux-persist/integration/react';
 
 enableScreens();
 
-const App: FunctionComponent = () => (
+const App: React.FC = () => (
   <Provider store={store}>
-    <RootNavigator />
+    <PersistGate loading={null} persistor={persistor}>
+      <RootNavigator />
+    </PersistGate>
   </Provider>
 );
 

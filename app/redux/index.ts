@@ -2,6 +2,7 @@ import { applyMiddleware, combineReducers, compose, createStore, StoreEnhancer }
 import createSagaMiddleware from 'redux-saga';
 import AsyncStorage from '@react-native-community/async-storage';
 import { persistStore, persistReducer, PersistConfig } from 'redux-persist';
+
 import reactotron from '../services/reactotron';
 import rootSaga from '../sagas';
 
@@ -36,7 +37,7 @@ export const store = createStore(persistedReducer, compose(...enhancers));
 
 sagaMiddleware.run(rootSaga);
 
-persistStore(store);
+export const persistor = persistStore(store);
 
 export type AppDispatch = typeof store.dispatch;
 
