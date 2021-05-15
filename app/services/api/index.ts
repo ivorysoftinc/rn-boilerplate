@@ -1,6 +1,7 @@
 import apisauce, { ApisauceInstance } from 'apisauce';
+
 import CONFIG from '../../config/env';
-import { User } from './api.types';
+import { IApiUser } from './api.types';
 
 class Api {
   private client: ApisauceInstance;
@@ -13,7 +14,7 @@ class Api {
     });
   }
 
-  getUser = () => this.client.get<User>('/api/user/'); // TOOD: Remove this sample method
+  getUser = () => this.client.get<IApiUser>('/api/user/'); // TOOD: Remove this sample method
 }
 
 export const apiInstance = new Api();

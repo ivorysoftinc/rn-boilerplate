@@ -1,1 +1,1 @@
-export interface HomeScreenProps {}
+export interface IHomeScreenProps {}

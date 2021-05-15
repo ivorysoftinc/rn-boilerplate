@@ -1,10 +1,11 @@
-import React, { FunctionComponent, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { SafeAreaView } from 'react-native';
+
 import { Text } from '../../components';
-import { InitialScreenProps } from './initial.props';
+import { IInitialScreenProps } from './initial.props';
 import { styles } from './initial.styles';
 
-export const InitialScreen: FunctionComponent<InitialScreenProps> = ({ navigation }) => {
+export const InitialScreen: React.FC<IInitialScreenProps> = ({ navigation }) => {
   useEffect(() => {
     // TODO: Timeout for loading simulation. Replace it with data fetching
     setTimeout(() => navigation.replace('Home'), 500);

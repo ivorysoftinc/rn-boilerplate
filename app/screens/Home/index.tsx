@@ -1,12 +1,12 @@
-import React, { FunctionComponent } from 'react';
+import React from 'react';
 import { SafeAreaView, View } from 'react-native';
 
 import { useUserAccount } from '../../redux/user';
 import { Text } from '../../components';
-import { HomeScreenProps } from './home.props';
+import { IHomeScreenProps } from './home.props';
 import { styles } from './home.styles';
 
-export const HomeScreen: FunctionComponent<HomeScreenProps> = () => {
+export const HomeScreen: React.FC<IHomeScreenProps> = () => {
   const user = useUserAccount();
 
   return (

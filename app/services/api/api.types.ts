@@ -1,4 +1,4 @@
-export interface User {
+export interface IApiUser {
   id: string;
   firstName: string;
   lastName: string;
