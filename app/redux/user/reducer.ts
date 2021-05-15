@@ -1,16 +1,16 @@
 import { createReducer } from 'reduxsauce';
-import { User } from '../../services/api/api.types';
+import { IApiUser } from '../../services/api/api.types';
 import {
   UserAction,
   userActionTypes,
-  GetUserAccountAction,
-  GetUserAccountFailureAction,
-  GetUserAccountSuccessAction,
+  IGetUserAccountAction,
+  IGetUserAccountFailureAction,
+  IGetUserAccountSuccessAction,
 } from './actions';
 
 export interface UserState {
   isLoading: boolean;
-  account: User | null;
+  account: IApiUser | null;
   error: string | null;
 }
 
@@ -22,18 +22,18 @@ const INITIAL_STATE: UserState = {
 
 type Handler<A> = (state: UserState, action: A) => UserState;
 
-const getUserAccount: Handler<GetUserAccountAction> = (state) => ({
+const getUserAccount: Handler<IGetUserAccountAction> = (state) => ({
   ...state,
   isLoading: true,
 });
 
-const getUserAccountSuccess: Handler<GetUserAccountSuccessAction> = (state, { account }) => ({
+const getUserAccountSuccess: Handler<IGetUserAccountSuccessAction> = (state, { account }) => ({
   ...state,
   isLoading: false,
   account,
 });
 
-const getUserAccountFailure: Handler<GetUserAccountFailureAction> = (state, { error }) => ({
+const getUserAccountFailure: Handler<IGetUserAccountFailureAction> = (state, { error }) => ({
   ...state,
   isLoading: false,
   error,

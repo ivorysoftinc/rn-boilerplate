@@ -1,38 +1,38 @@
 import { createActions } from 'reduxsauce';
-import { User } from '../../services/api/api.types';
+import { IApiUser } from '../../services/api/api.types';
 
-interface UserActionTypes {
+interface IUserActionTypes {
   GET_USER: 'GET_USER';
   GET_USER_SUCCESS: 'GET_USER_SUCCESS';
   GET_USER_FAILURE: 'GET_USER_FAILURE';
 }
 
-export interface GetUserAccountAction {
-  type: UserActionTypes['GET_USER'];
+export interface IGetUserAccountAction {
+  type: IUserActionTypes['GET_USER'];
 }
 
-export interface GetUserAccountSuccessAction {
-  type: UserActionTypes['GET_USER_SUCCESS'];
-  account: User;
+export interface IGetUserAccountSuccessAction {
+  type: IUserActionTypes['GET_USER_SUCCESS'];
+  account: IApiUser;
 }
 
-export interface GetUserAccountFailureAction {
-  type: UserActionTypes['GET_USER_FAILURE'];
+export interface IGetUserAccountFailureAction {
+  type: IUserActionTypes['GET_USER_FAILURE'];
   error: string;
 }
 
-interface UserActionCreators {
-  getUserAccount(): GetUserAccountAction;
-  getUserAccountSuccess(info: User): GetUserAccountSuccessAction;
-  getUserAccountFailure(error: string): GetUserAccountFailureAction;
+interface IUserActionCreators {
+  getUserAccount(): IGetUserAccountAction;
+  getUserAccountSuccess(info: IApiUser): IGetUserAccountSuccessAction;
+  getUserAccountFailure(error: string): IGetUserAccountFailureAction;
 }
 
 export type UserAction =
-  | GetUserAccountAction
-  | GetUserAccountSuccessAction
-  | GetUserAccountFailureAction;
+  | IGetUserAccountAction
+  | IGetUserAccountSuccessAction
+  | IGetUserAccountFailureAction;
 
-const { Types, Creators } = createActions<UserActionTypes, UserActionCreators>(
+const { Types, Creators } = createActions<IUserActionTypes, IUserActionCreators>(
   {
     getUser: null,
     getUserSuccess: ['info'],
