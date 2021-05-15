@@ -8,7 +8,7 @@ import { styles } from './initial.styles';
 export const InitialScreen: React.FC<IInitialScreenProps> = ({ navigation }) => {
   useEffect(() => {
     // TODO: Timeout for loading simulation. Replace it with data fetching
-    setTimeout(() => navigation.replace('Home'), 500);
+    setTimeout(() => navigation.replace('HomeStack'), 500);
   }, [navigation]);
 
   return (
