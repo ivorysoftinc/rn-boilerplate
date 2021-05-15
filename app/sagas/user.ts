@@ -1,11 +1,11 @@
 import { all, takeLatest } from '@redux-saga/core/effects';
 
-import { GetUserAccountAction, userActionTypes } from '../redux/user';
+import { IGetUserAccountAction, userActionTypes } from '../redux/user';
 
 function* watchGetUser() {
   // TODO
 }
 
 export function* userSaga() {
-  yield all([takeLatest<GetUserAccountAction>(userActionTypes.GET_USER, watchGetUser)]);
+  yield all([takeLatest<IGetUserAccountAction>(userActionTypes.GET_USER, watchGetUser)]);
 }
