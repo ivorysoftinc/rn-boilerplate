@@ -4,7 +4,7 @@ import { createNativeStackNavigator } from 'react-native-screens/native-stack';
 import { HomeScreen } from '../../screens';
 import { DEFAULT_STACK_OPTIONS } from '../options';
 
-type HomeStackParams = {
+export type HomeStackParams = {
   Home: undefined;
 };
 

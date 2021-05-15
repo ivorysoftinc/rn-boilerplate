@@ -1,12 +1,13 @@
 import { NativeStackNavigationOptions } from 'react-native-screens/native-stack';
 
-export const WITHOUT_HEADER_OPTIONS = {
+export const DEFAULT_STACK_OPTIONS: NativeStackNavigationOptions = {
   headerShown: false,
 };
 
-export const DEFAULT_STACK_OPTIONS = {
-  ...WITHOUT_HEADER_OPTIONS,
+export const GLOBAL_NAVIGATION_STACK_OPTIONS: NativeStackNavigationOptions = {
+  ...DEFAULT_STACK_OPTIONS,
   gestureEnabled: false,
+  replaceAnimation: 'push',
 };
 
 export const TRANSPARENT_MODAL_WITH_FADE_ANIM_OPTIONS: NativeStackNavigationOptions = {
