@@ -1,6 +1,6 @@
 import { StyleSheet, ViewStyle, TextStyle } from 'react-native';
 
-import COLORS from '../../utils/colors';
+import { COLORS } from '../../themes/colors';
 
 interface IHomeScreenStyles {
   root: ViewStyle;
