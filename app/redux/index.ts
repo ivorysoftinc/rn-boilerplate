@@ -7,9 +7,11 @@ import reactotron from '../services/reactotron';
 import rootSaga from '../sagas';
 
 // Reducers
+import { appReducer } from './app';
 import { userReducer } from './user';
 
 export const rootReducer = combineReducers({
+  app: appReducer,
   user: userReducer,
 });
 
