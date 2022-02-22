@@ -1,6 +1,6 @@
 import { applyMiddleware, combineReducers, compose, createStore, StoreEnhancer } from 'redux';
 import createSagaMiddleware from 'redux-saga';
-import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { persistStore, persistReducer, PersistConfig } from 'redux-persist';
 import reactotron from '../services/reactotron';
 import rootSaga from '../sagas';
